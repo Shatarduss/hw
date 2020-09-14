@@ -2,10 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-n = 100  # количество точек на отрезке x
+n = 500  # количество точек на отрезке x
 
 A = 512
-x = np.linspace(-10, 10, n)  # создание "отрезка"
+x = np.linspace(-A, A, n)  # создание "отрезка"
 
 # описание функции f(x)
 fx = -(A+47)*np.sin(np.sqrt(np.abs(x/2+(A+47))))    \
@@ -24,7 +24,7 @@ f = open(complete_file, 'w')
 # записываем таблицу
 f.write('x\tf(x)\n')
 for i in range(n):
-    f.write(str(round(x[i], 3))+'\t'+str(round(fx[i], 3))+"\n")
+    f.write(str(x[i].round(3))+'    '+str(fx[i].round(3))+"\n")
 f.close()
 
 # построение графика
@@ -33,5 +33,3 @@ plt.xlabel('x')
 plt.ylabel('f(x)')
 plt.grid()
 plt.show()
-
-
