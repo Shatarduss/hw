@@ -22,7 +22,7 @@ complete_file = os.path.join('results', 'task_01_307B_Voronko_7.txt')
 f = open(complete_file, 'w')
 
 # записываем таблицу
-f.write('x\tf(x)\n')
+f.write('x    f(x)\n')
 for i in range(n):
     f.write(str(x[i].round(3))+'    '+str(fx[i].round(3))+"\n")
 f.close()
@@ -33,3 +33,5 @@ plt.xlabel('x')
 plt.ylabel('f(x)')
 plt.grid()
 plt.show()
+
+
